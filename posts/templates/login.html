@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>logga in sida</title>
+</head>
+<body>
+    <h1>logga in</h1>
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">logga in knapp typ</button>
+    </form>
+
+    <p><a href="/register">Gå till registrering typ jao</a></p>
+</body>
+</html>

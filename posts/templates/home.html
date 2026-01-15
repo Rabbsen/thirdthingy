@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <title>FishPost</title>
@@ -7,5 +7,43 @@
 <body>
     <h1>🎣 FishPost</h1>
     <p>Här kommer alla fångster visas.</p>
+<div>
+    {% if user.is_authenticated %}
+        <p>Välkommen, {{ user.username }}! 
+            <form method="post" action="{% url 'logout' %}" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Logga ut</button>
+            </form>
+        </p>
+    {% else %}
+        <p><a href="{% url 'login' %}">Logga in</a> eller <a href="{% url 'register' %}">Registrera</a></p>
+    {% endif %}
+</div>
+
+<div>
+    <h1>Ladda upp din fångst</h1>
+    {% if user.is_authenticated %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Ladda upp</button>
+    </form>
+    {% else %}
+    <p>Du måste <a href="/login">logga in</a> för att ladda upp en fångst.</p>
+    {% endif %}
+</div>
+
+    {% for post in posts %}
+      <article style="margin-bottom: 30px;">
+        <h2>{{ post.title }}</h2>
+        <p>Uppladdad: {{ post.created_at }}</p>
+
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 400px; height: auto;">
+
+        {% if post.description %}
+            <p>{{ post.description }}</p>
+        {% endif %}
+      </article>
+      {% endfor %}
 </body>
 </html>

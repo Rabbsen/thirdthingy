@@ -1,14 +1,18 @@
 from django.shortcuts import render, redirect
 from .models import Post
 from .forms import PostForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-def home(request):
-    posts = Post.objects.all().order_by('-created_at')
-    return render(request, "home.html")
 
-def create_post(request):
+def home(request):
+    posts = Post.objects.all().order_by("-created_at")
+
+    # Om någon skickar formuläret (POST)
     if request.method == "POST":
+        if not request.user.is_authenticated:
+            return redirect("/login/")
+
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
@@ -17,4 +21,22 @@ def create_post(request):
             return redirect("home")
     else:
         form = PostForm()
-    return render(request, "create_post.html", {"form": form})
+
+    return render(request, "home.html", {"posts": posts, "form": form})
+
+# User registration
+
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
+
+def register(request):
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect("home")
+    else:
+        form = UserCreationForm()
+    return render(request, "register.html", {"form": form})
+
