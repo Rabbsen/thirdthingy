@@ -23,5 +23,5 @@ from django.dispatch import receiver
 
 @receiver(post_delete, sender=Post)
 def delete_associated_image(sender, instance, **kwargs):
-    if instance.image and instance.image.path and os.path.isfile(instance.image.path):
-        os.remove(instance.image.path)
+    if instance.image:
+        instance.image.delete(save=False)
