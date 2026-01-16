@@ -1,0 +1,132 @@
+/* google Fonts */
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Styling for the home page */
+/*-----------------------------------------------------------*/
+
+body {
+    font-family: "Bebas Neue", sans-serif;
+    background-color: darkgoldenrod;
+}
+/* Header styling */
+
+#homeheader {
+    display:flex;
+    background-color: black;
+    color: white;
+    min-height:150px;
+    max-width:100%;
+    align-items: center;
+}
+.header-content {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    flex-direction: row;
+}
+.header-text {
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+.header-loggin {
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    padding:5px;
+}
+.header-loggin .btn {
+    background-color:grey;
+    max-height:35px;
+    padding:0px;
+    width:auto;
+    padding:0 5px 0 5px;
+    border-color:white;
+}
+.header-loggin form {
+        padding:15px;
+}
+.header-loggin p {
+    font-size:1.7em;
+    margin-bottom:0px;
+    padding:5px;
+}
+.header-loggin a {
+    margin-bottom:5px;
+}
+@media (max-width: 576px) {
+    .header-content {
+        display:flex;
+        flex-direction:column;
+        height:auto;;
+    }
+    .header-text {
+        font-size: 25px;
+        display:flex;
+        flex-direction: column;
+        height:auto;
+        align-items:center;
+        padding:5px;
+    }
+    .header-text h1 {
+        font-size: 45px;
+    }
+    .header-loggin {
+        display:flex;
+        flex-direction: column;
+        height:auto;
+        align-items:center;
+    }
+    
+}
+
+/* modal body styling */
+
+.modal-body {
+    max-height: 700px;
+}
+.modal-form {
+    max-width: 520px;
+    margin: 0 auto;
+}
+.modal-form label {
+    display:block;
+    margin-bottom: 6px;
+}
+.modal-form input[type="text"],
+.modal-form input[type="file"],
+.modal-form textarea,
+.modal-form select {
+    width:100%;
+    box-sizing:border-box;
+    display:block;
+}
+.modal-form textarea {
+    height:140px;
+    resize:vertical;
+}
+.model-upload {
+    max-width:900px;
+}
+@media (min-width: 992px) {
+  .model-upload { max-width: 900px; }
+}
+
+/* main content styling */
+
+.main-content {
+    display:flex;
+    flex-direction: row;
+    margin:25px;
+}
+.main-content .card {
+    min-height:250px;
+}
