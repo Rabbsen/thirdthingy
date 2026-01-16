@@ -29,6 +29,7 @@ ALLOWED_HOSTS = ['fishing-post-970d76b59892.herokuapp.com', 'localhost']
 
 
 # Application definition
+import os
 
 INSTALLED_APPS = [
     'django.contrib.admin',
