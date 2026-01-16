@@ -19,29 +19,30 @@
     </head>
 <body>
 <header id="homeheader">
-    <div class="container d-flex justify-content-between align-items-center">
-        <h1 class="mb-0">The Fish Poster<p class="mb-0">Share your best catches!</p></h1>
-        <div>
-        {% if user.is_authenticated %}
-            <p>Välkommen, {{ user.username }}! 
-             <form method="post" action="{% url 'logout' %}" style="display:inline;">
-                 {% csrf_token %}
-                 <button type="submit">Logga ut</button>
-             </form>
-            </p>
-        {% else %}
-            <p><a href="{% url 'login' %}">Logga in</a> eller <a href="{% url 'register' %}">Registrera</a></p>
-        {% endif %}
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary btn-modal-trigger" data-bs-toggle="modal" data-bs-target="#uploadModal">
-                Upload your picture!
-            </button> 
+    <div class="container header-content">
+        <div class="header-text">
+            <h1 class="mb-0">The Fish Poster</h1>
+            <p>Share your best catches!</p>
+        </div>
+        <div class="header-loggin">
+            {% if user.is_authenticated %} 
+                <p>Välkommen, {{ user.username }}! </p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadModal">
+                    Upload your picture!
+                    </button> 
+                    <form method="post" action="{% url 'logout' %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit">Logga ut</button>
+                    </form>
+            {% else %}
+                <p><a href="{% url 'login' %}">Logga in</a> eller <a href="{% url 'register' %}">Registrera</a></p>
+            {% endif %}
         </div>
     </div>
 </header>
 <main class="container">
-<div class="container">
-{% if user.is_authenticated %}
+    <div class="container">
+    {% if user.is_authenticated %}
   <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
 
   <div class="modal-dialog modal-dialog-centered model-upload">
@@ -62,16 +63,7 @@
         <div class="modal-body">
             <div class="modal-form">
                 <div>
-                    {{ form.title.label_tag }}
-                    {{ form.title}}
-                </div>
-                <div>
-                    {{ form.description.label_tag }}
-                    {{ form.description }}
-                </div>
-                <div>
-                    {{ form.image.label_tag }}
-                    {{ form.image }}
+                    {{ form.as_p}}
                 </div>
             </div>
         </div>
@@ -83,6 +75,45 @@
     </div>
   </div>
 {% endif %}
+</div>
+<div class="main-content">
+    <div class="row g-4">
+  {% for post in posts %}
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card h-100 shadow-sm">
+
+        <img
+          src="{{ post.image.url }}"
+          class="card-img-top"
+          alt="{{ post.title }}"
+        >
+
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+
+          {% if post.description %}
+            <p class="card-text">{{ post.description }}</p>
+          {% endif %}
+
+          {% if post.weight or post.length %}
+            <p class="text-muted small">
+              {% if post.weight %} {{ post.weight }} kg{% endif %}
+              {% if post.weight and post.length %} · {% endif %}
+              {% if post.length %} {{ post.length }} cm{% endif %}
+            </p>
+          {% endif %}
+
+          <small class="text-muted">
+            Uppladdad av {{ post.user.username }}
+          </small>
+        </div>
+
+      </div>
+    </div>
+  {% empty %}
+    <p>No upploads yet!</p>
+  {% endfor %}
+</div>
 </div>
 </main>
 <footer>
