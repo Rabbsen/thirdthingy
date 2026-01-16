@@ -12,3 +12,14 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+    
+# admin delete posts also deletes associated image files
+
+import os
+from django.db.models.signals import post_delete
+from django.dispatch import receiver
+
+@receiver(post_delete, sender=Post)
+def delete_associated_image(sender, instance, **kwargs):
+    if instance.image and instance.image.path and os.path.isfile(instance.image.path):
+        os.remove(instance.image.path)
