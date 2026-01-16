@@ -11,15 +11,13 @@
 
 body {
     font-family: "Bebas Neue", sans-serif;
-    background-color:cornflowerblue;
 }
 
-.header {
+#homeheader {
     display:flex;
-    flex-direction:column;
-    background-color:cadetblue;
-    color:blue;
-    height:125px;
-    margin:0;
-    padding:0;
+    background-color: black;
+    color: white;
+    height:150px;
+    max-width:100%;
+    align-items: center;
 }
