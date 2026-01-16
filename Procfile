@@ -1,1 +1,1 @@
-web: gunicorn fishing-post.wsgi
+web: gunicorn fishpost.wsgi
