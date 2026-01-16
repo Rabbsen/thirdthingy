@@ -21,3 +21,39 @@ body {
     max-width:100%;
     align-items: center;
 }
+/* modal body styling */
+.btn-modal-styling {
+    background-color:grey;
+    color:white;
+    max-height: 25px;
+    max-width:fit-content;
+}
+.modal-body {
+    max-height: 700px;
+}
+.modal-form {
+    max-width: 520px;
+    margin: 0 auto;
+}
+.modal-form label {
+    display:block;
+    margin-bottom: 6px;
+}
+.modal-form input[type="text"],
+.modal-form input[type="file"],
+.modal-form textarea,
+.modal-form select {
+    width:100%;
+    box-sizing:border-box;
+    display:block;
+}
+.modal-form textarea {
+    height:140px;
+    resize:vertical;
+}
+.model-upload {
+    max-width:900px;
+}
+@media (min-width: 992px) {
+  .model-upload { max-width: 900px; }
+}

@@ -33,7 +33,7 @@
             <p><a href="{% url 'login' %}">Logga in</a> eller <a href="{% url 'register' %}">Registrera</a></p>
         {% endif %}
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadModal">
+            <button type="button" class="btn btn-primary btn-modal-trigger" data-bs-toggle="modal" data-bs-target="#uploadModal">
                 Upload your picture!
             </button> 
         </div>
@@ -44,7 +44,7 @@
 {% if user.is_authenticated %}
   <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
 
-  <div class="modal-dialog modal-lg modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered model-upload">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="uploadModalLabel">
@@ -60,9 +60,18 @@
       <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="modal-body">
-            <div class="justify-content-left">
-                <div class="d-flex flex-row align-items-center">
-                    {{ form.as_p }}
+            <div class="modal-form">
+                <div>
+                    {{ form.title.label_tag }}
+                    {{ form.title}}
+                </div>
+                <div>
+                    {{ form.description.label_tag }}
+                    {{ form.description }}
+                </div>
+                <div>
+                    {{ form.image.label_tag }}
+                    {{ form.image }}
                 </div>
             </div>
         </div>
