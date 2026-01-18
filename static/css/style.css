@@ -119,6 +119,10 @@ body {
 @media (min-width: 992px) {
   .model-upload { max-width: 900px; }
 }
+.modal-delete {
+    display:flex;
+    justify-content: right;
+}
 
 /* main content styling */
 

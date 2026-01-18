@@ -26,16 +26,16 @@
         </div>
         <div class="header-loggin">
             {% if user.is_authenticated %} 
-                <p>Välkommen, {{ user.username }}! </p>
+                <p>Welcome!, {{ user.username }}! </p>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadModal">
                     Upload your picture!
                     </button> 
                     <form method="post" action="{% url 'logout' %}" style="display:inline;">
                         {% csrf_token %}
-                        <button type="submit">Logga ut</button>
+                        <button type="submit">Log out</button>
                     </form>
             {% else %}
-                <p><a href="{% url 'login' %}">Logga in</a> eller <a href="{% url 'register' %}">Registrera</a></p>
+                <p><a href="{% url 'login' %}">Log in</a> Or <a href="{% url 'register' %}">Register</a></p>
             {% endif %}
         </div>
     </div>
@@ -103,13 +103,13 @@
           {% endif %}
 
           <small class="text-muted">
-            Uppladdad av {{ post.user.username }}
+            Uploaded by: {{ post.user.username }}
           </small>
 
           {% if user.is_authenticated and post.user == user %}
             <button
               type="button"
-              class="btn btn-danger btn-sm"
+              class="modal-delete btn btn-danger btn-sm"
               data-bs-toggle="modal"
               data-bs-target="#deleteModal{{ post.pk }}">Delete</button>
           {% endif %}           
