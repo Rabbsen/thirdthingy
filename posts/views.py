@@ -48,7 +48,7 @@ from django.contrib import messages
 from .models import Post
 
 @login_required(login_url='/login/')
-def post_delete(request, pk):
+def delete_post(request, pk):
     post = get_object_or_404(Post, pk=pk, user=request.user)
 
     if request.method == "POST":
