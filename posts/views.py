@@ -53,7 +53,7 @@ def delete_post(request, pk):
 
     if request.method == "POST":
         post.delete()  
-        return redirect("post_list")  
+        return redirect("home")  
 
 
 
