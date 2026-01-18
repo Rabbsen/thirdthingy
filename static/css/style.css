@@ -134,3 +134,12 @@ body {
 .main-content .card {
     min-height:250px;
 }
+/* styling for upload cards */
+.card-body {
+    display:flex;
+    flex-direction: column;
+}
+.card-body .delbtn {
+    margin-top:auto;
+    align-self:flex-end;
+}
