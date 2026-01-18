@@ -109,7 +109,7 @@
           {% if user.is_authenticated and post.user == user %}
             <button
               type="button"
-              class="modal-delete btn btn-danger btn-sm"
+              class="btn btn-danger btn-sm"
               data-bs-toggle="modal"
               data-bs-target="#deleteModal{{ post.pk }}">Delete</button>
           {% endif %}           

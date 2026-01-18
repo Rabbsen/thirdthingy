@@ -121,7 +121,7 @@ body {
 }
 .modal-delete {
     display:flex;
-    justify-content: right;
+    justify-content: space-between;
 }
 
 /* main content styling */
