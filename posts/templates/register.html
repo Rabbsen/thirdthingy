@@ -27,13 +27,19 @@
     </div>
 
 </header>
-    <h1>Register for free here!</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Create account</button>
-    </form>
-    <p><a href="/">Go back to main site</a></p>
+<div class="container">
+    <div class="register">
+        <h1>Register for free here!</h1>
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+        <div class="regdiv">
+            <button type="submit">Create account</button>
+            <p><a href="/" class="btn btn-danger">Go back to main site</a></p>
+        </div>
+        </form>
+    </div>
+</div>
 <footer>
 
 </footer>

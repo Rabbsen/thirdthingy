@@ -27,14 +27,17 @@
     </div>
 
 </header>
-    <h1>Welcome!</h1>
-    <form method="POST" action="{% url 'login' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Log in</button>
-    </form>
-
-    <p><a href="/register">Register!</a></p>
+    <div class="container">
+        <div class="login">
+            <h1>Welcome!</h1>
+                <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Log in</button>
+                </form>
+        </div>
+    </div>
+        <p><a href="/register">Register!</a></p>
 <footer>
 
 </footer>
