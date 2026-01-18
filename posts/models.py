@@ -23,5 +23,10 @@ from django.dispatch import receiver
 
 @receiver(post_delete, sender=Post)
 def delete_associated_image(sender, instance, **kwargs):
-    if instance.image:
-        instance.image.delete(save=False)
+    try:
+        
+        if instance.image:
+            instance.image.delete(save=False)
+    
+    except Exception:
+        pass

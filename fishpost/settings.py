@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-#8azmx!t+=kb7os(5st6@-mujk^&egghgkd&k6-^ohm-03!w+%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['fishing-post-970d76b59892.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['fishing-post-970d76b59892.herokuapp.com', 'localhost','127.0.0.1']
 
 
 # Application definition
@@ -149,8 +149,8 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-# MEDIA_URL = "/media/"
-# MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
 
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
