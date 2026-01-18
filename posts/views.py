@@ -44,19 +44,16 @@ def register(request):
 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect
+from django.contrib import messages
 from .models import Post
 
 @login_required(login_url='/login/')
-def delete_post(request, post_id):
-    post = get_object_or_404(Post, id=post_id)
-
-    if post.user != request.user:
-        return redirect("home")
+def post_delete(request, pk):
+    post = get_object_or_404(Post, pk=pk, user=request.user)
 
     if request.method == "POST":
-        post.delete()
-        return redirect("home")
-    
-    return redirect("home")
+        post.delete()  
+        return redirect("post_list")  
+
 
 

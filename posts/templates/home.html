@@ -85,8 +85,7 @@
         <img
           src="{{ post.image.url }}"
           class="card-img-top"
-          alt="{{ post.title }}"
-        >
+          alt="{{ post.title }}">
 
         <div class="card-body">
           <h5 class="card-title">{{ post.title }}</h5>
@@ -106,8 +105,38 @@
           <small class="text-muted">
             Uppladdad av {{ post.user.username }}
           </small>
-        </div>
 
+          {% if user.is_authenticated and post.user == user %}
+            <button
+              type="button"
+              class="btn btn-danger btn-sm"
+              data-bs-toggle="modal"
+              data-bs-target="#deleteModal{{ post.pk }}">Delete</button>
+          {% endif %}           
+        </div>
+          <div class="modal fade" id="deleteModal{{ post.pk }}" tabindex="-1"
+            aria-labelledby="deleteModalLabel{{ post.pk }}" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+  
+                <div class="modal-header">
+                  <h5 class="modal-title" id="deleteModalLabel{{ post.pk }}">Delete the post</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+  
+                <div class="modal-body">Are you sure you want to delete this post?<strong>{{ post.title }}</strong>?
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <form method="post" action="{% url 'post_delete' post.pk %}">
+                     {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Yes, delete post</button>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
   {% empty %}
