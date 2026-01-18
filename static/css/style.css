@@ -131,15 +131,17 @@ body {
     flex-direction: row;
     margin:25px;
 }
-.main-content .card {
-    min-height:250px;
+/*.main-content .card {
+    min-height:100%;
 }
 /* styling for upload cards */
+
 .card-body {
     display:flex;
     flex-direction: column;
+    height:auto;
 }
 .card-body .delbtn {
-    margin-top:auto;
     align-self:flex-end;
+    width:auto;
 }
