@@ -12,6 +12,10 @@
 body {
     font-family: "Bebas Neue", sans-serif;
     background-color: darkgoldenrod;
+    min-height:100vh;
+    display:flex;
+    flex-direction: column;
+
 }
 /* Header styling */
 
@@ -193,13 +197,66 @@ body {
     width:auto;
 }
 /* Login html styling */
-
+.loginbox {
+    min-height: calc(100vh - 140px);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:24px;
+}
 .login {
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top:50px;
+    margin-top:15px;
+    width:100%;
+    max-width:480px;
+    padding:32px 28px;
+    border-radius: 16px;
+    background:black;
+    border:1px solid white;
+    text-align:center;
+}
+.login h1 {
+    color:white;
+    letter-spacing: 1px;
+}
+.logdiv {
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom:5px;
+    margin-top: 25px;
+}
+
+.login form p{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    color:white;
+    margin:5px;
+}
+.login form li {
+    color:grey;
+}
+.login form label{
+    padding:15px;
+}
+.formbtn {
+    display: block;
+    margin: 25px auto 0 auto;
+}
+
+/* Register html styling */
+.registerbox{
+    min-height: calc(100vh - 140px);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:24px;
 }
 .register {
     display:flex;
@@ -207,6 +264,29 @@ body {
     align-items: center;
     justify-content: center;
     margin-top:50px;
+    width:100%;
+    max-width:480px;
+    padding:32px 28px;
+    border-radius: 16px;
+    background:black;
+    border:1px solid white;
+    text-align:center;
+}
+.register h1{
+    color:white;
+    letter-spacing: 1px;
+}
+.register form p{
+    color:white;
+    margin:5px;
+}
+.register form li {
+    color:grey;
+    letter-spacing: 1px;
+}
+.register span{
+    padding:15px;
+    color:grey
 }
 .regdiv {
     display:flex;
@@ -217,4 +297,19 @@ body {
 }
 .regdiv p {
     margin-bottom:0px;
+}
+.register form p{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Footer styling */
+footer {
+    display:flex;
+    background-color: black;
+    color: white;
+    min-height:100px;
+    width:100%;
+    align-items: center;
+    margin-top:auto;
 }

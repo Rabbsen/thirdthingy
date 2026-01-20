@@ -27,17 +27,18 @@
     </div>
 
 </header>
-    <div class="container">
+    <div class="container loginbox">
         <div class="login">
             <h1>Welcome!</h1>
                 <form method="POST" action="{% url 'login' %}">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit">Log in</button>
+                <button type="submit" class="formbtn btn btn-success">Log in</button>
                 </form>
-            <div>
-                <p><a href="/register" class="btn btn-primary">Register!</a></p>
-            </div> 
+                <div class="logdiv">
+                    <a href="/register" class="btn btn-primary">Register!</a>
+                    <a href="/" class="btn btn-danger">Go back to main page</a>
+                </div> 
         </div>
     </div>
 <footer>
