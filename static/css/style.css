@@ -177,25 +177,44 @@ body {
     color:white;
     border-color: white;
 }
-.main-content {
-    display:flex;
-    flex-direction: row;
-    margin:25px;
-}
-/*.main-content .card {
-    min-height:100%;
-}
+
 /* styling for upload cards */
 
+.main-content {
+    margin:25px;
+    display:block;
+}
+
+.mainfeed {
+    column-count:3;
+    column-gap:20px;
+}
+
+@media (max-width: 992px){
+  .mainfeed{ column-count: 2; }
+}
+
+@media (max-width: 576px){
+  .mainfeed{ column-count: 1; }
+}
+
+.feed-items{
+  break-inside: avoid;
+  margin-bottom: 20px;
+}
+.feed-items .card {
+    display:inline-block;
+    width:100%;
+}
 .card-body {
     display:flex;
     flex-direction: column;
-    height:auto;
 }
 .card-body .delbtn {
     align-self:flex-end;
-    width:auto;
+    margin-top:10px;
 }
+
 /* Login html styling */
 .loginbox {
     min-height: calc(100vh - 140px);
