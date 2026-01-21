@@ -94,7 +94,7 @@
           alt="{{ post.title }}">
 
         <div class="card-body">
-          <h5 class="card-title">{{ post.title }}</h5>
+          <h2 class="card-title h5">{{ post.title }}</h2>
 
           {% if post.description %}
             <p class="card-text">{{ post.description }}</p>
@@ -120,8 +120,7 @@
               data-bs-target="#deleteModal{{ post.pk }}">Delete</button>
           {% endif %}           
         </div>
-          <div class="modal fade" id="deleteModal{{ post.pk }}" tabindex="-1"
-            aria-labelledby="deleteModalLabel{{ post.pk }}" aria-hidden="true">
+          <div class="modal fade" id="deleteModal{{ post.pk }}" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="deleteModalLabel{{ post.pk }}" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
   
