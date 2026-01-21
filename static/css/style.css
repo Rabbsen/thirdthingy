@@ -55,6 +55,9 @@ body {
     flex-direction:column;
     align-items: center;
     justify-content: center;
+}
+.header-text a {
+    color:white;
     text-decoration: none;
 }
 .header-loggin {
