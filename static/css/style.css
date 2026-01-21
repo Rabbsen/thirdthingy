@@ -336,3 +336,11 @@ footer {
     align-items: center;
     margin-top:auto;
 }
+.footerdiv {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items:center;
+    width:100%;
+}
