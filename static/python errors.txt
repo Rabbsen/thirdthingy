@@ -1,0 +1,142 @@
+Python error codes using flake8
+.\fishpost\settings.py:23:80: E501 line too long (81 > 79 characters)
+.\fishpost\settings.py:28:72: E231 missing whitespace after ','
+.\fishpost\settings.py:28:80: E501 line too long (84 > 79 characters)
+.\fishpost\settings.py:32:1: E402 module level import not at top of file
+.\fishpost\settings.py:33:1: E402 module level import not at top of file
+.\fishpost\settings.py:58:5: E122 continuation line missing indentation or outdented
+.\fishpost\settings.py:61:5: E122 continuation line missing indentation or outdented
+.\fishpost\settings.py:64:1: E122 continuation line missing indentation or outdented
+.\fishpost\settings.py:67:5: E122 continuation line missing indentation or outdented
+.\fishpost\settings.py:70:5: E122 continuation line missing indentation or outdented
+.\fishpost\settings.py:73:1: E122 continuation line missing indentation or outdented
+.\fishpost\settings.py:113:1: E402 module level import not at top of file
+.\fishpost\settings.py:114:1: E402 module level import not at top of file
+.\fishpost\settings.py:132:80: E501 line too long (91 > 79 characters)
+.\fishpost\settings.py:135:80: E501 line too long (81 > 79 characters)
+.\fishpost\settings.py:138:80: E501 line too long (82 > 79 characters)
+.\fishpost\settings.py:141:80: E501 line too long (83 > 79 characters)
+.\fishpost\settings.py:173:1: W391 blank line at end of file
+.\fishpost\urls.py:29:1: E402 module level import not at top of file
+.\fishpost\urls.py:30:1: E402 module level import not at top of file
+.\fishpost\urls.py:36:1: E402 module level import not at top of file
+.\fishpost\urls.py:39:80: E501 line too long (91 > 79 characters)
+.\fishpost\urls.py:40:80: E501 line too long (93 > 79 characters)
+.\fishpost\urls.py:42:1: W391 blank line at end of file
+.\posts\forms.py:4:1: E302 expected 2 blank lines, found 1
+.\posts\forms.py:7:41: E231 missing whitespace after ','
+.\posts\forms.py:7:50: E231 missing whitespace after ','
+.\posts\forms.py:9:80: E501 line too long (94 > 79 characters)
+.\posts\forms.py:10:80: E501 line too long (116 > 79 characters)
+.\posts\forms.py:11:80: E501 line too long (103 > 79 characters)
+.\posts\forms.py:12:80: E501 line too long (103 > 79 characters)
+.\posts\forms.py:15:1: W293 blank line contains whitespace
+.\posts\forms.py:15:9: W292 no newline at end of file
+.\posts\migrations\0001_initial.py:20:80: E501 line too long (117 > 79 characters)
+.\posts\migrations\0001_initial.py:25:80: E501 line too long (118 > 79 characters)
+.\posts\migrations\0002_post_lenght_post_weight.py:21:80: E501 line too long (93 > 79 characters)
+.\posts\models.py:6:1: E302 expected 2 blank lines, found 1
+.\posts\models.py:10:80: E501 line too long (87 > 79 characters)
+.\posts\models.py:17:1: W293 blank line contains whitespace
+.\posts\models.py:20:1: F401 'os' imported but unused
+.\posts\models.py:20:1: E305 expected 2 blank lines after class or function definition, found 1
+.\posts\models.py:20:1: E402 module level import not at top of file
+.\posts\models.py:21:1: E402 module level import not at top of file
+.\posts\models.py:22:1: E402 module level import not at top of file
+.\posts\models.py:24:1: E302 expected 2 blank lines, found 1
+.\posts\models.py:27:1: W293 blank line contains whitespace
+.\posts\models.py:30:1: W293 blank line contains whitespace
+.\posts\tests.py:1:1: F401 'django.test.TestCase' imported but unused
+.\posts\views.py:8:1: E302 expected 2 blank lines, found 1
+.\posts\views.py:29:1: E305 expected 2 blank lines after class or function definition, found 1
+.\posts\views.py:29:1: E402 module level import not at top of file
+.\posts\views.py:30:1: E402 module level import not at top of file
+.\posts\views.py:32:1: E302 expected 2 blank lines, found 1
+.\posts\views.py:45:1: F811 redefinition of unused 'login_required' from line 4
+.\posts\views.py:45:1: E305 expected 2 blank lines after class or function definition, found 1
+.\posts\views.py:45:1: E402 module level import not at top of file
+.\posts\views.py:46:1: F811 redefinition of unused 'redirect' from line 1
+.\posts\views.py:46:1: E402 module level import not at top of file
+.\posts\views.py:47:1: E402 module level import not at top of file
+.\posts\views.py:48:1: F811 redefinition of unused 'Post' from line 2
+.\posts\views.py:48:1: E402 module level import not at top of file
+.\posts\views.py:50:1: E302 expected 2 blank lines, found 1
+.\posts\views.py:62:1: W391 blank line at end of file
+PS C:\Users\bjork\Desktop\vscode-projects\Third project> python -m flake8 fishpost posts --exclude=.venv,migrations
+fishpost\settings.py:23:80: E501 line too long (81 > 79 characters)
+fishpost\settings.py:28:72: E231 missing whitespace after ','
+fishpost\settings.py:28:80: E501 line too long (84 > 79 characters)
+fishpost\settings.py:32:1: E402 module level import not at top of file
+fishpost\settings.py:33:1: E402 module level import not at top of file
+fishpost\settings.py:58:5: E122 continuation line missing indentation or outdented
+fishpost\settings.py:61:5: E122 continuation line missing indentation or outdented
+fishpost\settings.py:64:1: E122 continuation line missing indentation or outdented
+fishpost\settings.py:67:5: E122 continuation line missing indentation or outdented
+fishpost\settings.py:70:5: E122 continuation line missing indentation or outdented
+fishpost\settings.py:73:1: E122 continuation line missing indentation or outdented
+fishpost\settings.py:113:1: E402 module level import not at top of file
+fishpost\settings.py:114:1: E402 module level import not at top of file
+fishpost\settings.py:132:80: E501 line too long (91 > 79 characters)
+fishpost\settings.py:135:80: E501 line too long (81 > 79 characters)
+fishpost\settings.py:138:80: E501 line too long (82 > 79 characters)
+fishpost\settings.py:141:80: E501 line too long (83 > 79 characters)
+fishpost\settings.py:173:1: W391 blank line at end of file
+fishpost\urls.py:29:1: E402 module level import not at top of file
+fishpost\urls.py:30:1: E402 module level import not at top of file
+fishpost\urls.py:36:1: E402 module level import not at top of file
+fishpost\urls.py:39:80: E501 line too long (91 > 79 characters)
+fishpost\urls.py:40:80: E501 line too long (93 > 79 characters)
+fishpost\urls.py:42:1: W391 blank line at end of file
+posts\forms.py:4:1: E302 expected 2 blank lines, found 1
+posts\forms.py:7:41: E231 missing whitespace after ','
+posts\forms.py:7:50: E231 missing whitespace after ','
+posts\forms.py:9:80: E501 line too long (94 > 79 characters)
+posts\forms.py:10:80: E501 line too long (116 > 79 characters)
+posts\forms.py:11:80: E501 line too long (103 > 79 characters)
+posts\forms.py:12:80: E501 line too long (103 > 79 characters)
+posts\forms.py:15:1: W293 blank line contains whitespace
+posts\forms.py:15:9: W292 no newline at end of file
+posts\models.py:6:1: E302 expected 2 blank lines, found 1
+posts\models.py:10:80: E501 line too long (87 > 79 characters)
+posts\models.py:17:1: W293 blank line contains whitespace
+posts\models.py:20:1: F401 'os' imported but unused
+posts\models.py:20:1: E305 expected 2 blank lines after class or function definition, found 1
+posts\models.py:20:1: E402 module level import not at top of file
+posts\models.py:21:1: E402 module level import not at top of file
+posts\models.py:22:1: E402 module level import not at top of file
+posts\models.py:24:1: E302 expected 2 blank lines, found 1
+posts\models.py:27:1: W293 blank line contains whitespace
+posts\models.py:30:1: W293 blank line contains whitespace
+posts\tests.py:1:1: F401 'django.test.TestCase' imported but unused
+posts\views.py:8:1: E302 expected 2 blank lines, found 1
+posts\views.py:29:1: E305 expected 2 blank lines after class or function definition, found 1
+posts\views.py:29:1: E402 module level import not at top of file
+posts\views.py:30:1: E402 module level import not at top of file
+posts\views.py:32:1: E302 expected 2 blank lines, found 1
+posts\views.py:45:1: F811 redefinition of unused 'login_required' from line 4
+posts\views.py:45:1: E305 expected 2 blank lines after class or function definition, found 1
+posts\views.py:45:1: E402 module level import not at top of file
+posts\views.py:46:1: F811 redefinition of unused 'redirect' from line 1
+posts\views.py:46:1: E402 module level import not at top of file
+posts\views.py:47:1: E402 module level import not at top of file
+posts\views.py:48:1: F811 redefinition of unused 'Post' from line 2
+posts\views.py:48:1: E402 module level import not at top of file
+posts\views.py:50:1: E302 expected 2 blank lines, found 1
+posts\views.py:62:1: W391 blank line at end of file
+PS C:\Users\bjork\Desktop\vscode-projects\Third project> 
+
+
+after fix:
+posts\models.py:30:22: E231 missing whitespace after ','
+posts\views.py:5:1: F811 redefinition of unused 'redirect' from line 1
+posts\views.py:13:1: E302 expected 2 blank lines, found 1
+posts\views.py:34:1: E302 expected 2 blank lines, found 1
+PS C:\Users\bjork\Desktop\vscode-projects\Third project> python -m flake8 fishpost posts --exclude=.venv,migrations
+fishpost\settings.py:29:80: E501 line too long (81 > 79 characters)
+posts\models.py:15:22: W291 trailing whitespace
+posts\models.py:16:26: W291 trailing whitespace
+posts\models.py:17:19: W291 trailing whitespace
+posts\models.py:18:20: W291 trailing whitespace
+posts\models.py:30:22: E231 missing whitespace after ','
+PS C:\Users\bjork\Desktop\vscode-projects\Third project> python -m flake8 fishpost posts --exclude=.venv,migrations
+PS C:\Users\bjork\Desktop\vscode-projects\Third project> 

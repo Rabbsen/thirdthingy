@@ -168,7 +168,7 @@ body {
 
 .uploadbtn {
     background-color:grey;
-    max-height:auto;
+    height:auto;
     padding:0px;
     width:auto;
     padding:0px 25px 0px 25px;

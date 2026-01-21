@@ -1,14 +1,16 @@
-from django.shortcuts import render, redirect
-from .models import Post
-from .forms import PostForm
+from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import get_object_or_404, redirect, render
+from django.views.decorators.http import require_POST
 
-# Create your views here.
+from .forms import PostForm
+from .models import Post
+
 
 def home(request):
     posts = Post.objects.all().order_by("-created_at")
 
-    # Om någon skickar formuläret (POST)
     if request.method == "POST":
         if not request.user.is_authenticated:
             return redirect("/login/")
@@ -24,10 +26,6 @@ def home(request):
 
     return render(request, "home.html", {"posts": posts, "form": form})
 
-# User registration
-
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import login
 
 def register(request):
     if request.method == "POST":
@@ -38,25 +36,13 @@ def register(request):
             return redirect("home")
     else:
         form = UserCreationForm()
+
     return render(request, "register.html", {"form": form})
 
-# user post delete view
 
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import get_object_or_404, redirect
-from django.views.decorators.http import require_POST
-from .models import Post
-
-@login_required(login_url='/login/')
+@login_required(login_url="/login/")
 @require_POST
 def delete_post(request, pk):
     post = get_object_or_404(Post, pk=pk, user=request.user)
-
-    if request.user != post.user and not request.user.is_staff:
-        return redirect("home")
-
     post.delete()
     return redirect("home")
-
-
-
