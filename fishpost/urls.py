@@ -28,6 +28,7 @@ urlpatterns = [
     path("", views.home, name="home"),
     path("register/", views.register, name="register"),
     path("delete/<int:pk>/", views.delete_post, name="delete_post"),
+    path("edit/<int:pk>/", views.edit_post, name="edit_post"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
