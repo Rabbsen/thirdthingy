@@ -55,6 +55,7 @@ body {
     flex-direction:column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 .header-text a {
     color:white;
@@ -91,24 +92,35 @@ body {
     .header-content {
         display:flex;
         flex-direction:column;
-        height:auto;;
-    }
-    .header-text {
-        font-size: 25px;
-        display:flex;
-        flex-direction: column;
         height:auto;
-        align-items:center;
-        padding:5px;
     }
-    .header-text h1 {
-        font-size: 45px;
+
+    .header-text {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        padding: 5px;
+        text-align: center;
     }
+
+    .header-text h1 a {
+        font-size:32px;
+    }
+
+    .header-text p a {
+        font-size:20px;
+        line-height:1.2;
+    }
+
     .header-loggin {
         display:flex;
         flex-direction: column;
         height:auto;
         align-items:center;
+    }
+    .header-loggin p {
+    font-size: 16px;
     }
     .btn.uploadbtn {
         max-height:45px;

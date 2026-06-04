@@ -20,9 +20,10 @@
   <body>
   <header id="homeheader">
      <div class="container header-content">
-         <div class="header-text">
-             <h1 class="mb-0"><a href="{% url 'home' %}">The Fish Poster</a></h1>
-             <p><a href="{% url 'home' %}">Share your best catches!</a></p>
+         <div class="header-text text-center">
+             <h1 class="mb-0"><a href="{% url 'home' %}">The Fish Poster</a></h1><br>
+             <p class="mb-0"><a href="{% url 'home' %}">Share your greatest catches with anglers around the world!</a></p>
+             <p class="mb-0"><a href="{% url 'home' %}">Create • Edit • Share • Manage your fishing catches</a></p>
          </div>
           <div class="header-loggin">
              {% if user.is_authenticated %} 

@@ -47,13 +47,11 @@ def delete_post(request, pk):
     post.delete()
     return redirect("home")
 
+
 def edit_post(request, pk):
     post = get_object_or_404(Post, pk=pk, user=request.user)
-
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES, instance=post)
-
         if form.is_valid():
             form.save()
-
     return redirect("home")
