@@ -49,7 +49,7 @@
     </div>
   <div class="container"> 
     {% if user.is_authenticated %}
-    <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+    <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true" role="dialog">
      <div class="modal-dialog modal-dialog-centered model-upload">
        <div class="modal-content">
           <div class="modal-header">
@@ -131,7 +131,7 @@
               <div class="modal-content">
   
                 <div class="modal-header">
-                  <h5 class="modal-title" id="deleteModalLabel{{ post.pk }}">Delete the post</h5>
+                  <h3 class="modal-title" id="deleteModalLabel{{ post.pk }}">Delete the post</h3>
                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
   
@@ -149,7 +149,8 @@
             </div>
           </div>
         </div>
-        <div class="modal fade" id="editModal{{ post.pk }}" tabindex="-1" aria-labelledby="editModalLabel{{ post.pk }}" aria-hidden="true">
+        <div class="modal fade" id="editModal{{ post.pk }}" tabindex="-1" aria-labelledby="editModalLabel{{ post.pk }}" aria-hidden="true"
+         role="dialog">
               <div class="modal-dialog modal-dialog-centered model-upload">
                  <div class="modal-content">
                      <div class="modal-header">
